@@ -6,7 +6,8 @@ def main():
 	img_arr = glob.glob("./imgs/*.bmp")
 	#imgpath = "./imgs/correct.bmp"
 
-	name = raw_input("name of file?\n")
+	#name = raw_input("name of file?\n")
+	name = "batch_"
 	n1 = raw_input("minVal\n")
 	n2 = raw_input("maxVal\n")
 	i = 0
@@ -16,7 +17,7 @@ def main():
 
 		out = "./output/"
 		edges = cv2.Canny(img, float(n1), float(n2))
-		cv2.imwrite(out + name + str(i) + ".bmp", edges)
+		cv2.imwrite(out + name + "_" + n1 +"_" + n2 + "_" + str(i) + ".bmp", edges)
 		i += 1
 
 main()
